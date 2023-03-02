@@ -1,20 +1,22 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TextInput, Button } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import {useState} from "react";
+import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigator = useNavigation();
 
     const handleLogin = () => {
-        if(!email || !password) {
-            alert("Please enter your email and password");
-            return;
-        }
-
+        // if(!email || !password) {
+        //     alert("Please enter your email and password");
+        //     return;
+        // }
+        
         // TODO: Call an API to authenticate the user
         // For now, we'll simulate the login by setting a dummy token
         const token = '123456789';
@@ -36,14 +38,17 @@ const LoginScreen = () => {
             <Text style={styles.title}>Login</Text>
             <TextInput
                 label="Email"
-                value={email}
-                onChange={this.handleEmailChange}
+                // value={email}
+                placeholder="Enter your email"
+                onchangeText={handleLogin}
                 style={styles.input}
+                autocapitalize="none"
             />
             <TextInput
                 label="Password"
-                value={password}
-                onchange={this.handlePasswordChange}
+                // value={password}
+                onchangeText={handleLogin}
+                placeholder="Enter your password"
                 secureTextEntry={true}
                 style={styles.input}
             />

@@ -6,7 +6,6 @@ const SignUp = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-
             <Text style={styles.title}>Sign Up Form</Text>
             <View style={styles.form}>
                 <Text style={styles.text}>First Name</Text>
@@ -21,7 +20,6 @@ const SignUp = () => {
             <TouchableOpacity style={styles.searchButton} onPress={() => { navigation.navigate('Home') }}>
                 <Text style={styles.buttonText} >Sign Up</Text>
             </TouchableOpacity>
-
         </View>
     );
 };
