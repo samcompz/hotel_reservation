@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Ratings() {
+export default function Profile() {
   return (
     <View>
-      <Text>Ratings</Text>
+      <Text>Profile</Text>
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    
+})
