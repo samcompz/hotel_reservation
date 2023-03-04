@@ -1,39 +1,50 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import GuestManagement from './GuestManagement';
+import RoomManagement from './RoomManagement';
+import Profile from "./Profile";
 
 
 const HomeScreen = () => {
     const navigation = useNavigation();
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
              <View style={styles.container}>
                 <Image source={require('./assets/favicon.png')} style={styles.logo}/>
                 <TouchableOpacity>
-                    <Text style={styles.headerButton}>Sign in</Text>
+                    <Text style={styles.headerButton}>Hotel Management System</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.content}>
-                <Text style={styles.title}>Find Your Perfect Hotel</Text>
-                <TouchableOpacity style={styles.searchButton} onPress={()=> navigation.navigate('Login')}>
-                    <Text style={styles.searchButtonText}>Login</Text>
+                <Text style={styles.title}>Perfect Hotel</Text>
+                <TouchableOpacity style={styles.searchButton} onPress={()=> navigation.navigate('GuestManagement')}>
+                    <Text style={styles.searchButtonText}>Guest  Mngmt</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('Booking')}>
+                    <Text style={styles.searchButtonText}>Booking Mgmnt </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('RoomManagement')}>
+                    <Text style={styles.searchButtonText}>Room Mngnt</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('Gallery')}>
+                    <Text style={styles.searchButtonText}>Gallery</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('Profile')}>
+                    <Text style={styles.searchButtonText}>My Profile</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.footer}>
-                <Text style={styles.footerText}>Don't have an account?</Text>
-                <TouchableOpacity style={styles.searchButton} onPress ={() => {navigation.navigate('SignUp')}}>
-                    <Text style={styles.signUpButtonText}>Sign Up</Text>
-                </TouchableOpacity>
+                <Text style={styles.footerText}>@2023 Hotel Management System</Text>  
             </View>
-        </View>
-        
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#3cb043',
     },
     header: {
         flexDirection: 'row',
@@ -82,6 +93,7 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal: 40,
         borderRadius: 10,
+        marginBottom: 20,
     },
     searchButtonText: {
         fontSize: 14,

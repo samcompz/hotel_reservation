@@ -8,6 +8,10 @@ import SearchHotels from './SearchHotels';
 import SignUp from './SignUp';
 import LoginScreen from './Login';
 import GuestManagement from './GuestManagement';
+import RoomManagement from './RoomManagement';
+import Booking from './Booking';
+import Gallery from './Gallery';
+import Profile from './Profile';
 
 export default function App() {
 
@@ -21,6 +25,10 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="GuestManagement" component={GuestManagement} />
+        <Stack.Screen name="RoomManagement" component={RoomManagement} />
+        <Stack.Screen name="Booking" component={Booking} />
+        <Stack.Screen name="Gallery" component={Gallery} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
