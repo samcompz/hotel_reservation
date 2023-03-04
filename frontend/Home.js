@@ -10,15 +10,13 @@ const HomeScreen = () => {
     const navigation = useNavigation();
     return (
         <ScrollView style={styles.container}>
-             <View style={styles.container}>
-                <Image source={require('./assets/favicon.png')} style={styles.logo}/>
-                <TouchableOpacity>
-                    <Text style={styles.headerButton}>Hotel Management System</Text>
-                </TouchableOpacity>
+            <View style={styles.container}>
+                <Image source={require('./assets/favicon.png')} style={styles.logo} />
+                <Text style={styles.title}>Perfect Hotel</Text>
+                <Text style={styles.headerButton}>Hotel Management System</Text>
             </View>
             <View style={styles.content}>
-                <Text style={styles.title}>Perfect Hotel</Text>
-                <TouchableOpacity style={styles.searchButton} onPress={()=> navigation.navigate('GuestManagement')}>
+                <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('GuestManagement')}>
                     <Text style={styles.searchButtonText}>Guest  Mngmt</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('Booking')}>
@@ -35,7 +33,7 @@ const HomeScreen = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.footer}>
-                <Text style={styles.footerText}>@2023 Hotel Management System</Text>  
+                <Text style={styles.footerText}>@2023 Hotel Management System</Text>
             </View>
         </ScrollView>
     );
@@ -57,7 +55,7 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         alignSelf: 'center',
-        marginTop: 50,
+        marginTop: 5,
     },
     headerButton: {
         fontSize: 26,
@@ -84,7 +82,9 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: 5,
+        alignSelf: 'center',
+        color: '#fff',
     },
     searchButton: {
         width: '60%',
@@ -107,11 +107,11 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         alignContent: 'center',
     },
-    footerText:{
+    footerText: {
         fontSize: 16,
         textAlign: 'center',
     },
-    footerLink:{
+    footerLink: {
         fontSize: 15,
         textAlign: 'center',
     },

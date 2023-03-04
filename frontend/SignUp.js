@@ -13,13 +13,14 @@ const SignUp = () => {
                 <Text style={styles.text}>SurName Name</Text>
                 <TextInput style={styles.input} placeholder="Sur Name" />
                 <Text style={styles.text}>Password</Text>
-                <TextInput style={styles.input} placeholder="*********" />
+                <TextInput style={styles.input} placeholder="********" />
                 <Text style={styles.text}>Confirm Password</Text>
-                <TextInput style={styles.input} placeholder="**********" />
+                <TextInput style={styles.input} placeholder="********" />
+                <TouchableOpacity style={styles.searchButton} onPress={() => { navigation.navigate('Home') }}>
+                    <Text style={styles.buttonText} >Sign Up</Text>
+                </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.searchButton} onPress={() => { navigation.navigate('Home') }}>
-                <Text style={styles.buttonText} >Sign Up</Text>
-            </TouchableOpacity>
+        
         </View>
     );
 };
@@ -29,16 +30,17 @@ export default SignUp;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#3cb043',
         // alignItems: 'center',
-        justifyContent: 'center',
-
+        // justifyContent: 'center',
+        padding: 20,
     },
     title: {
         fontSize: 30,
         fontWeight: 'bold',
         marginBottom: 20,
-
+        textAlign: 'center',
+        color: '#fff',
     },
     text: {
         width: 200,
@@ -60,14 +62,13 @@ const styles = StyleSheet.create({
         color: '#000',
     },
     form: {
-        width: '80%',
+        width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-
     },
     searchButton: {
-        width: '60%',
+        width: '80%',
         textAlign: 'center',
         backgroundColor: '#f15454',
         paddingVertical: 10,

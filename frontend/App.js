@@ -19,11 +19,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="SearchHotels" component={SearchHotels} />
         <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="GuestManagement" component={GuestManagement} />
         <Stack.Screen name="RoomManagement" component={RoomManagement} />
         <Stack.Screen name="Booking" component={Booking} />
