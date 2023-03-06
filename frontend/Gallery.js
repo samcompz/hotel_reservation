@@ -1,42 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import ImageGrid from 'react-native-image-grid';
+import react from "react";
+import { TouchableOpacity, View, Text, StyleSheet, Image, FlatList, Dimensions } from "react-native";
+import useState from "react";
+
+
+
+
+// const [images, setImages] = useState([]);
+// const { width } = Dimensions.get('window');
+// const SPACING = 10;
+// const THUMB_SIZE = 80;
+
+// const IMAGES = {
+//     image1: require("./assets/purple_beach.jpg"),
+//     image2: require("./assets/superior-room-home-page.jpg"),
+//     // image3: require("./assets/the-lanesborough-london-presidential-suite.jpg"),
+//     // image4: require("./assets/the-lanesborough-london-london.jpg"),
+//     // image5: require("./assets/3d-printing.jpg"),
+//     // image6: require("./assets/3d-printing.jpg"),
+//     // image7: require("./assets/3d-printing.jpg"),
+//     // image8: require("./assets/3d-printing.jpg"),
+//     // image9: require("./assets/3d-printing.jpg"),
+//     // image10: require("./assets/3d-printing.jpg"),
+//     // image11: require("./assets/3d-printing.jpg"),
+//     // image12: require("./assets/3d-printing.jpg"),
+//     // image13: require("./assets/3d-printing.jpg"),
+//     // image14: require("./assets/3d-printing.jpg"),
+//     // image15: require("./assets/3d-printing.jpg"),
+//     // image16: require("./assets/3d-printing.jpg"),
+//     // image17: require("./assets/3d-printing.jpg"),
+//     // image18: require("./assets/3d-printing.jpg"),
+//     // image19: require("./assets/3d-printing.jpg"),
+//     // image20: require("./assets/3d-printing.jpg"),
+//     // image21: require("./assets/3d-printing.jpg"),
+
+// }
+
+
 
 const Gallery = () => {
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        // get all images in gallery
-        const options = {
-            assetType: 'Photos',
-            includeBase64: false,
-            maxHeight: 200,
-            maxWidth: 200,
-            quality: 0.8,
-        };
-        CameraRoll.getPhotos(options).then(({ edges }) => {
-            const images = edges.map(({ node }) => node.image);
-            setImages(images);
-        });
-    }, []);
-
-    const renderImage = image => {
-        return (
-            <Image
-                source={{ uri: image.uri }}
-                style={{ width: 100, height: 100 }}
-            />
-        );
-    };
+//     const [images, setImages] = useState([
+//         { id: 1, image: IMAGES.image1 },
+//         { id: 2, image: IMAGES.image2 },
+//         { id: 3, image: IMAGES.image3 },
+//         { id: 4, image: IMAGES.image4 },
+//         { id: 5, image: IMAGES.image5 },
+//         { id: 6, image: IMAGES.image6 },
+//         { id: 7, image: IMAGES.image7 },
+//     ]);
 
     return (
         <View style={styles.container}>
-            <ImageGrid
-                data={images}
-                itemsPerRow={3}
-                renderItem={renderImage}
-            />
-            <Text>Gallery</Text>
+            <Text style={styles.ttext}>Gallery</Text>
+
+
+
         </View>
     );
 };
@@ -44,9 +61,17 @@ const Gallery = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#000',
         justifyContent: 'center',
         alignItems: 'center',
     },
+
+    text:{
+        color: "#fff",
+        fontsize: 32,
+        marginTop: 50,
+        marginTopBottom: 25,
+    }
 });
 
 export default Gallery;

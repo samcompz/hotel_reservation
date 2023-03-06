@@ -4,8 +4,6 @@ import { TextInput } from 'react-native-gesture-handler'
 import { Picker } from '@react-native-picker/picker';
 import { TouchableOpacity, DatePickerIOS } from 'react-native';
 
-
-
 export default function Booking() {
   const [name, setName] = React.useState('')
   const [phone, setPhone] = React.useState('')
