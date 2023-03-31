@@ -9,9 +9,9 @@ import SignUp from './SignUp';
 import LoginScreen from './Login';
 import GuestManagement from './GuestManagement';
 import RoomManagement from './RoomManagement';
-import Booking from './Booking';
+import Booking from './BookingManagement';
 import Gallery from './Gallery';
-import Profile from './Profile';
+import UserProfile from './UserProfile';
 
 export default function App() {
 
@@ -28,7 +28,7 @@ export default function App() {
         <Stack.Screen name="RoomManagement" component={RoomManagement} />
         <Stack.Screen name="Booking" component={Booking} />
         <Stack.Screen name="Gallery" component={Gallery} />
-        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="UserProfile" component={UserProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

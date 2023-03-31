@@ -13,10 +13,10 @@ const LoginScreen = () => {
     const navigator = useNavigation();
 
     const handleLogin = () => {
-        // if(!email || !password) {
-        //     alert("Please enter your email and password");
-        //     return;
-        // }
+        if(!email || !password) {
+            alert("Please enter your email and password");
+            // return;
+        }
         
         // TODO: Call an API to authenticate the user
         // For now, we'll simulate the login by setting a dummy token
@@ -35,8 +35,6 @@ const LoginScreen = () => {
     const handleSignUp = () => {
         navigator.navigate('SignUp');
     };
-
-
 
     return (
         <View style={styles.container}>
@@ -62,9 +60,7 @@ const LoginScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity style={{marginBottom: 20}} onPress={handleSignUp}>
                 <Text style={{color: '#f15454'}}>Don't have an account? Sign up</Text>
-            </TouchableOpacity>
-       
-            
+            </TouchableOpacity>  
         </View>
     )
 };
@@ -104,4 +100,3 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 });
-

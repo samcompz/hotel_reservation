@@ -5,10 +5,10 @@ import useState from "react";
 
 
 
-// const [images, setImages] = useState([]);
-// const { width } = Dimensions.get('window');
-// const SPACING = 10;
-// const THUMB_SIZE = 80;
+const [images, setImages] = useState([]);
+const { width } = Dimensions.get('window');
+const SPACING = 10;
+const THUMB_SIZE = 80;
 
 // const IMAGES = {
 //     image1: require("./assets/purple_beach.jpg"),
