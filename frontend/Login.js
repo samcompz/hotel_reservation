@@ -4,6 +4,7 @@ import { TextInput, Button } from "react-native";
 import {useState} from "react";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 const LoginScreen = () => {
@@ -12,10 +13,10 @@ const LoginScreen = () => {
     const navigator = useNavigation();
 
     const handleLogin = () => {
-        // if(!email || !password) {
-        //     alert("Please enter your email and password");
-        //     return;
-        // }
+        if(!email || !password) {
+            alert("Please enter your email and password");
+            // return;
+        }
         
         // TODO: Call an API to authenticate the user
         // For now, we'll simulate the login by setting a dummy token
@@ -31,7 +32,9 @@ const LoginScreen = () => {
         });
     };
 
-
+    const handleSignUp = () => {
+        navigator.navigate('SignUp');
+    };
 
     return (
         <View style={styles.container}>
@@ -52,7 +55,12 @@ const LoginScreen = () => {
                 secureTextEntry={true}
                 style={styles.input}
             />
-            <Button style={styles.button} title="Login" onPress={handleLogin}>Login</Button>
+            <TouchableOpacity onPress= {handleLogin} >
+                <Text style={{color: '#f15454', marginBottom: 20}}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{marginBottom: 20}} onPress={handleSignUp}>
+                <Text style={{color: '#f15454'}}>Don't have an account? Sign up</Text>
+            </TouchableOpacity>  
         </View>
     )
 };
@@ -64,6 +72,7 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#3cb043',
     },
     title: {
         fontWeight:'bold',
@@ -83,7 +92,7 @@ const styles = StyleSheet.create({
         width: 300,
         height: 50,
         backgroundColor: '#333',
-        color: '#fff',
+        backgroundColor: '#f15454',
         fontSize: 20,
         fontWeight: 'bold',
         borderRadius: 5,
@@ -91,4 +100,3 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 });
-
